@@ -111,8 +111,8 @@ void* thread_1(void* n)
 
 	while (1) {
 		if (s == state_0 && pos[tid] > bp[0] && pos[tid] < bp[1]) {
-			lock_mutex(1, tid);
 			lock_mutex(0, tid);
+			lock_mutex(1, tid);
 			s = state_1;
 		}
 		else if (s == state_1 && (pos[tid] >= bp[1] || pos[tid] < bp[2])) {
